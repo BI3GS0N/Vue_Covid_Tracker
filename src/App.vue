@@ -1,11 +1,7 @@
-<template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
-</template>
-
+<template></template>
+<script>
+export default {};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
