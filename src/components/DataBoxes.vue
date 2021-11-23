@@ -6,11 +6,10 @@
         <h4>
           New: <span>{{ numberWithCommas(stats.NewConfirmed) }}</span>
         </h4>
-        <!-- {{ numberWithCommas(stats.NewConfirmed) }} -->
       </div>
       <div class="box__info">
         <h4>
-          <!-- Total: <span>{{ numberWithCommas(stats.TotalConfirmed) }}</span> -->
+          Total: <span>{{ numberWithCommas(stats.TotalConfirmed) }}</span>
         </h4>
       </div>
     </div>
@@ -19,12 +18,12 @@
       <h3 class="box__title">Deaths</h3>
       <div class="box__info">
         <h4>
-          <!-- New: <span> {{ numberWithCommas(stats.NewDeaths) }}</span> -->
+          New: <span> {{ numberWithCommas(stats.NewDeaths) }}</span>
         </h4>
       </div>
       <div class="box__info">
         <h4>
-          <!-- Total: <span>{{ numberWithCommas(stats.TotalDeaths) }}</span> -->
+          Total: <span>{{ numberWithCommas(stats.TotalDeaths) }}</span>
         </h4>
       </div>
     </div>
@@ -34,11 +33,16 @@
 <script>
 export default {
   name: "DataBoxes",
-  props: ["stats"],
+  props: {
+    stats: Object,
+  },
   methods: {
     numberWithCommas(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
+  },
+  async created() {
+    console.log(this.stats);
   },
 };
 </script>
@@ -59,6 +63,7 @@ export default {
 }
 .box__title {
   margin-bottom: 1rem;
+  font-size: 2.5rem;
 }
 .box--2 {
   background-color: #75875a;

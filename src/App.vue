@@ -1,6 +1,8 @@
 <template>
   <Header />
-  <router-view />
+  <div class="container">
+    <router-view />
+  </div>
 </template>
 <script>
 import Header from "@/components/Header.vue";
@@ -25,5 +27,11 @@ body {
   font-family: "Lato", sans-serif;
   font-size: 1.6rem;
   background-color: #eeece8;
+}
+.container {
+  padding: 2rem;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 </style>
