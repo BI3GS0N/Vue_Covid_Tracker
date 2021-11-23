@@ -1,9 +1,14 @@
 <template>
   <div v-if="!loading">
     <DataTitle :text="dataTitle" :date="dataDate" />
-    <SelectCountry :countries="countries" @get-country="getCountryData" />
+    <SelectCountry
+      :countries="countries"
+      @get-country="getCountryData"
+      @clear="clearData"
+    />
     <DataBoxes :stats="dataStats" />
   </div>
+
   <div class="loading" v-else>
     Loading data
     <i class="fas fa-spinner fa-spin fa-4x"></i>
@@ -43,6 +48,14 @@ export default {
     getCountryData(country) {
       this.dataStats = country;
       this.dataTitle = country.Country;
+    },
+    async clearData() {
+      console.log("clearData");
+      this.loading = true;
+      const data = await this.fetchData();
+      this.dataTitle = "Global";
+      this.dataStats = data.Global;
+      this.loading = false;
     },
   },
   async created() {

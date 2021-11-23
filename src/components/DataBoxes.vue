@@ -41,9 +41,6 @@ export default {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
   },
-  async created() {
-    console.log(this.stats);
-  },
 };
 </script>
 <style scoped>

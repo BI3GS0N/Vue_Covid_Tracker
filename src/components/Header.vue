@@ -3,7 +3,9 @@
     <i class="fas fa-virus fa-5x"></i>
     <div class="info">
       <h1 class="header__title">Covid Tracker</h1>
-      <p class="header__description">by <a href="#">Sylwester Biega</a></p>
+      <p class="header__description">
+        by <a href="https://github.com/BI3GS0N">Sylwester Biega</a>
+      </p>
     </div>
     <i class="fas fa-virus fa-5x"></i>
   </header>
