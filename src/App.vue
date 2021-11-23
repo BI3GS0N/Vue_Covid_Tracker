@@ -1,26 +1,28 @@
-<template></template>
+<template>
+  <Header />
+  <router-view />
+</template>
 <script>
-export default {};
+import Header from "@/components/Header.vue";
+
+export default {
+  components: {
+    Header,
+  },
+};
 </script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-#nav {
-  padding: 30px;
+html {
+  font-size: 62.5%;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
 }
 </style>
