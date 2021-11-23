@@ -24,5 +24,6 @@ html {
 body {
   font-family: "Lato", sans-serif;
   font-size: 1.6rem;
+  background-color: #eeece8;
 }
 </style>

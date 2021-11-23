@@ -22,7 +22,7 @@ export default {
 div {
   text-align: center;
   color: #3a5a40;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 h2 {
   margin-bottom: 1rem;

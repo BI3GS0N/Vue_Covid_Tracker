@@ -1,20 +1,26 @@
 <template>
   <DataTitle :text="dataTitle" :date="dataDate" />
+  <DataBoxes :stats="dataStats" />
 </template>
 
 <script>
 // @ is an alias to /src
-import DataTitle from "@/components/DataTitle.vue";
 import axios from "axios";
+
+import DataTitle from "@/components/DataTitle.vue";
+import DataBoxes from "@/components/DataBoxes.vue";
+
 export default {
   name: "Home",
   components: {
     DataTitle,
+    DataBoxes,
   },
   data() {
     return {
       dataTitle: "Global",
       dataDate: "",
+      dataStats: {},
     };
   },
   methods: {
@@ -28,6 +34,7 @@ export default {
     const data = await this.fetchData();
     console.log(data);
     this.dataDate = data.Date;
+    this.dataStats = data.Global;
   },
 };
 </script>
