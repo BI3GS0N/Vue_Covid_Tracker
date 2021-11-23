@@ -1,5 +1,6 @@
-# covid-tracker-vue
+# Covid Tracker - Vue
 
+## 👉[Live App](https://bi3gs0n.github.io/Vue_Covid_Tracker) 👈
 ## Project setup
 ```
 npm install
