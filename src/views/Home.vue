@@ -1,7 +1,7 @@
 <template>
   <div v-if="!loading">
     <DataTitle :text="dataTitle" :date="dataDate" />
-    <SelectCountry />
+    <SelectCountry :countries="countries" @get-country="getCountryData" />
     <DataBoxes :stats="dataStats" />
   </div>
   <div class="loading" v-else>
@@ -30,6 +30,7 @@ export default {
       dataTitle: "Global",
       dataDate: "",
       dataStats: {},
+      countries: [],
       loading: true,
     };
   },
@@ -39,6 +40,10 @@ export default {
       const data = await res.data;
       return data;
     },
+    getCountryData(country) {
+      this.dataStats = country;
+      this.dataTitle = country.Country;
+    },
   },
   async created() {
     this.loading = true;
@@ -46,6 +51,7 @@ export default {
     console.log(data);
     this.dataDate = data.Date;
     this.dataStats = data.Global;
+    this.countries = data.Countries;
     this.loading = false;
   },
 };
